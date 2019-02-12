@@ -75,8 +75,7 @@ function startGame () {
             let gridSq = document.createElement("div");
 
             boardContainer.append(gridSq);
-            // gridSq.className = "gridSq unclicked " + this.innerHTML;
-            gridSq.className = "gridSq " + this.innerHTML;
+            gridSq.className = "gridSq unclicked " + this.innerHTML;
             gridSq.setAttribute("data-x", i+1);
             gridSq.setAttribute("data-y", j+1);
             tempRow.push(0);
@@ -132,7 +131,8 @@ function reveal() {
     }
 }
 
-function rightclick () {
+function rightclick (evt) {
+    evt.preventDefault();
     this.style.backgroundImage = "url(/assets/flagged.png)";
     this.style.backgroundRepeat = "repeat-none";
     this.style.backgroundSize = "100% 100%";
